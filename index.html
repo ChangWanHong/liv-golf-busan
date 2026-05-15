@@ -608,6 +608,177 @@
     opacity: 0.85;
   }
 
+  /* ============= COURSE HOLE LIST ============= */
+  .hole-list {
+    margin-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .hole-row {
+    display: grid;
+    grid-template-columns: 22px auto 56px 1fr;
+    gap: 8px 10px;
+    align-items: center;
+    padding: 11px 2px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 12px;
+  }
+  .hole-row .h-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    color: var(--green);
+    font-size: 13px;
+  }
+  .hole-row .h-par {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    font-family: 'JetBrains Mono', monospace;
+    min-width: 38px;
+    text-align: center;
+  }
+  .h-par.p3 { background: var(--pink); color: #fff; }
+  .h-par.p4 { background: var(--cyan); color: #000; }
+  .h-par.p5 { background: var(--gold); color: #000; }
+  .hole-row .h-yard {
+    font-family: 'JetBrains Mono', monospace;
+    color: rgba(255,255,255,0.75);
+    font-size: 11px;
+    text-align: right;
+  }
+  .hole-row .h-desc {
+    color: var(--muted);
+    font-size: 11.5px;
+    line-height: 1.45;
+  }
+  .hole-row .h-desc b { color: rgba(255,255,255,0.9); font-weight: 700; }
+
+  .course-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    font-family: 'JetBrains Mono', monospace;
+    color: #fff;
+  }
+  .course-tag.lake { background: #3a7ca5; }
+  .course-tag.pine { background: #4a7c2f; }
+  .course-tag.valley { background: #8c6c3f; }
+
+  .course-totals {
+    display: flex;
+    gap: 14px;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.04em;
+  }
+  .course-totals span b { color: var(--text); }
+
+  /* Signature hole card */
+  .sig-hole {
+    text-align: left;
+  }
+  .sig-hole .big-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 120px;
+    line-height: 0.82;
+    letter-spacing: -0.03em;
+    color: #f4f4f5;
+  }
+  .sig-hole .sub {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    margin-bottom: 14px;
+  }
+
+  /* ============= HOLE LAYOUT CARDS (appendix) ============= */
+  .card--hole {
+    padding: 0;
+    overflow: hidden;
+    justify-content: stretch;
+    background: #0c0c10;
+  }
+  .card--hole .layout {
+    flex: 1;
+    min-height: 0;
+    background-color: #1a1a1f;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+  }
+  .card--hole .top-overlay {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    pointer-events: none;
+  }
+  .card--hole .h-big {
+    font-family: 'Anton', sans-serif;
+    font-size: 56px;
+    line-height: 0.85;
+    color: #fff;
+    background: rgba(0,0,0,0.55);
+    padding: 6px 14px 8px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    letter-spacing: -0.02em;
+  }
+  .card--hole .chips {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+  }
+  .card--hole .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .card--hole .chip.p3 { background: var(--pink); color: #fff; }
+  .card--hole .chip.p4 { background: var(--cyan); color: #000; }
+  .card--hole .chip.p5 { background: var(--gold); color: #000; }
+  .card--hole .info {
+    padding: 14px 18px 18px;
+    background: var(--bg-1);
+    border-top: 1px solid var(--line);
+  }
+  .card--hole .info h4 {
+    font-size: 13px;
+    margin: 0 0 4px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+  .card--hole .info p {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: #d4d4d8;
+    margin: 0;
+  }
+  .card--hole .info p b { color: #fff; font-weight: 700; }
+
   /* Mini player thumb */
   .ptrio {
     display: grid;
@@ -653,7 +824,7 @@ CH 01 — HERO / D-DAY
     <span class="num">01</span>
     <span class="dot"></span>
     <span class="title">D-DAY</span>
-    <span class="total">/ 9</span>
+    <span class="total">/ 12</span>
   </div>
   <div class="rail">
     <div class="card">
@@ -697,7 +868,7 @@ CH 02 — LIV 골프란 (merged: intro + format + scoring + vs PGA + prize)
   <div class="meta">
     <span class="num">02</span><span class="dot"></span>
     <span class="title">LIV 골프란?</span>
-    <span class="total">/ 9</span>
+    <span class="total">/ 12</span>
   </div>
   <div class="rail">
     <div class="card">
@@ -795,7 +966,7 @@ CH 04 — 2026 LAST SAUDI SEASON (PIF news)
   <div class="meta">
     <span class="num">03</span><span class="dot"></span>
     <span class="title">2026이 마지막일지도</span>
-    <span class="total">/ 9</span>
+    <span class="total">/ 12</span>
   </div>
   <div class="rail">
     <div class="card card--dark">
@@ -843,7 +1014,7 @@ CH 04 — TEAMS (13 teams overview)
   <div class="meta">
     <span class="num">04</span><span class="dot"></span>
     <span class="title">13개 팀</span>
-    <span class="total">/ 9</span>
+    <span class="total">/ 12</span>
   </div>
   <div class="rail">
     <div class="card">
@@ -1083,7 +1254,7 @@ CH 05 — STARS
   <div class="meta">
     <span class="num">05</span><span class="dot"></span>
     <span class="title">꼭 봐야 할 스타들</span>
-    <span class="total">/ 9</span>
+    <span class="total">/ 12</span>
   </div>
   <div class="rail">
     <div class="card">
@@ -1195,7 +1366,7 @@ CH 07 — COURSE + GETTING THERE + PARKING
   <div class="meta">
     <span class="num">06</span><span class="dot"></span>
     <span class="title">코스 + 가는 길 + 주차</span>
-    <span class="total">/ 9</span>
+    <span class="total">/ 12</span>
   </div>
   <div class="rail">
     <div class="card card--photo">
@@ -1204,7 +1375,7 @@ CH 07 — COURSE + GETTING THERE + PARKING
       <div class="info">
         <span class="eyebrow">Gijang · Busan</span>
         <h2>ASIAD<br/><span class="accent-green">CC</span></h2>
-        <p>부산 기장군 일광읍. Rees Jones 리디자인 (2019). 27홀 / 약 7,470yd. 2002 아시안게임 코스.</p>
+        <p>부산 기장군 일광읍. Rees Jones 리디자인 (2019). 27홀(9홀×3코스). LIV 챔피언십 18홀 ~7,470yd. 2002 아시안게임 코스.</p>
       </div>
     </div>
 
@@ -1285,13 +1456,13 @@ CH 07 — COURSE + GETTING THERE + PARKING
 </section>
 
 <!-- =========================================================
-CH 14 — WHAT YOU CAN/CAN'T BRING
+CH 08 — MANNERS + PREP
 ========================================================= -->
 <section class="chapter" data-num="07" data-title="MANNERS+PREP">
   <div class="meta">
     <span class="num">07</span><span class="dot"></span>
     <span class="title">매너 + 반입 + 준비물</span>
-    <span class="total">/ 9</span>
+    <span class="total">/ 12</span>
   </div>
   <div class="rail">
     <div class="card card--green">
@@ -1367,7 +1538,7 @@ CH 18 — PEGGY GOU
   <div class="meta">
     <span class="num">08</span><span class="dot"></span>
     <span class="title">페기 구 공연</span>
-    <span class="total">/ 9</span>
+    <span class="total">/ 12</span>
   </div>
   <div class="rail">
     <div class="card card--photo">
@@ -1428,7 +1599,7 @@ CH 10 — CLOSING (merged tips + tl;dr + sources)
   <div class="meta">
     <span class="num">09</span><span class="dot"></span>
     <span class="title">잘 즐기기 + 정리</span>
-    <span class="total">/ 9</span>
+    <span class="total">/ 12</span>
   </div>
   <div class="rail">
     <div class="card">
@@ -1471,6 +1642,240 @@ CH 10 — CLOSING (merged tips + tl;dr + sources)
       <span class="eyebrow">END</span>
       <h2 class="display" style="font-size:54px;line-height:0.9;">HAVE<br/><span class="accent-green">FUN</span></h2>
       <p style="margin-top:18px;">D-15. 토요일 부산에서 보자.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+CH 10 — APPENDIX: LAKE COURSE (9 holes with layouts)
+========================================================= -->
+<section class="chapter" data-num="10" data-title="LAKE 9H">
+  <div class="meta">
+    <span class="num">10</span><span class="dot"></span>
+    <span class="title">부록 · LAKE 9홀 디테일</span>
+    <span class="total">/ 12</span>
+  </div>
+  <div class="rail">
+    <div class="card">
+      <span class="course-tag lake" style="margin-bottom:16px;">LAKE · 9H</span>
+      <h2 class="display" style="font-size:48px;line-height:0.9;">레이크<br/><span class="accent-green">코스</span></h2>
+      <p style="margin-top:16px;">호수와 자연림이 어우러지는 시그니처 코스.</p>
+      <dl class="kv" style="margin-top:12px; gap:8px 14px; font-size:13px;">
+        <dt>Par</dt><dd>36</dd>
+        <dt>Black tee</dt><dd>3,276m / 약 3,583yd</dd>
+        <dt>홀 구성</dt><dd>Par 4 × 5, Par 5 × 2, Par 3 × 2</dd>
+      </dl>
+      <p class="muted" style="font-size:11px; margin-top:14px; font-family:'JetBrains Mono',monospace; letter-spacing:0.1em;">→ SWIPE · 9홀 레이아웃</p>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_01_hole_01.png');"></div>
+      <div class="top-overlay"><div class="h-big">1</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">381m</span><span class="chip">HCP 4</span></div></div>
+      <div class="info"><h4>다레음산 배경 오프닝</h4><p>양쪽 페어웨이 벙커를 잘 피하면 <b>버디 기회</b>. 세컨샷이 그린에 못 가면 파 세이브 어려움.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_01_hole_02.png');"></div>
+      <div class="top-overlay"><div class="h-big">2</div><div class="chips"><span class="chip p5">PAR 5</span><span class="chip">462m</span><span class="chip">HCP 9</span></div></div>
+      <div class="info"><h4>짧은 파5 · 스코어링 홀</h4><p>오른쪽 호수 + 왼쪽 벙커. <b>2온 가능</b>. 어려우면 세 번째 샷이 짧다.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_01_hole_03.png');"></div>
+      <div class="top-overlay"><div class="h-big">3</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">396m</span><span class="chip">HCP 2</span></div></div>
+      <div class="info"><h4>호수 위 돌다리 티잉</h4><p>오르막 파4. 호수 위 돌다리에서 티샷. <b>중앙 벙커</b>가 어프로치 좌우 결정.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_01_hole_04.png');"></div>
+      <div class="top-overlay"><div class="h-big">4</div><div class="chips"><span class="chip p3">PAR 3</span><span class="chip">180m</span><span class="chip">HCP 6</span></div></div>
+      <div class="info"><h4>까다로운 파3</h4><p>양쪽 벙커 + <b>큰 소나무</b> + 그린 뒤 둔덕. 그린이 뒤로 떨어지는 경사.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_01_hole_05.png');"></div>
+      <div class="top-overlay"><div class="h-big">5</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">382m</span><span class="chip">HCP 3</span></div></div>
+      <div class="info"><h4>2단 그린</h4><p>왼쪽 러프의 큰 소나무가 세컨샷 방해. 페어웨이 중앙~오른쪽 노리기.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_01_hole_06.png');"></div>
+      <div class="top-overlay"><div class="h-big">6</div><div class="chips"><span class="chip p5">PAR 5</span><span class="chip">550m</span><span class="chip">HCP 7</span></div></div>
+      <div class="info"><h4>시그니처 · 호수 위 그린</h4><p>550m 장거리. 오른쪽 소나무 숲, 좁은 페어웨이, <b>호수 위에 떠있는 듯한 그린</b>.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_01_hole_07.png');"></div>
+      <div class="top-overlay"><div class="h-big">7</div><div class="chips"><span class="chip p3">PAR 3</span><span class="chip">156m</span><span class="chip">HCP 8</span></div></div>
+      <div class="info"><h4>호수 너머 티샷</h4><p>너무 강하면 벙커 + 내리막. 그린이 <b>호수 쪽으로 기울어짐</b>.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_01_hole_08.png');"></div>
+      <div class="top-overlay"><div class="h-big">8</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">352m</span><span class="chip">HCP 5</span></div></div>
+      <div class="info"><h4>짧은 파4</h4><p>오른쪽 큰 소나무 주의. 중앙/왼쪽 페어웨이 노리고 그린 어프로치 정확도 필수.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_01_hole_09.png');"></div>
+      <div class="top-overlay"><div class="h-big">9</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">417m</span><span class="chip">HCP 1</span></div></div>
+      <div class="info"><h4>레이크 HCP 1 · 피니셔</h4><p><b>10m 오르막</b> + 능선 페어웨이. 좁은 입구 + 그린 둘러싼 벙커.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+CH 11 — APPENDIX: PINE COURSE
+========================================================= -->
+<section class="chapter" data-num="11" data-title="PINE 9H">
+  <div class="meta">
+    <span class="num">11</span><span class="dot"></span>
+    <span class="title">부록 · PINE 9홀 디테일</span>
+    <span class="total">/ 12</span>
+  </div>
+  <div class="rail">
+    <div class="card">
+      <span class="course-tag pine" style="margin-bottom:16px;">PINE · 9H</span>
+      <h2 class="display" style="font-size:48px;line-height:0.9;">파인<br/><span class="accent-green">코스</span></h2>
+      <p style="margin-top:16px;">솔향 가득한 소나무 숲 코스. 정확도의 시험대.</p>
+      <dl class="kv" style="margin-top:12px; gap:8px 14px; font-size:13px;">
+        <dt>Par</dt><dd>36</dd>
+        <dt>Black tee</dt><dd>3,208m / 약 3,508yd</dd>
+        <dt>홀 구성</dt><dd>Par 4 × 5, Par 5 × 2, Par 3 × 2</dd>
+      </dl>
+      <p class="muted" style="font-size:11px; margin-top:14px; font-family:'JetBrains Mono',monospace; letter-spacing:0.1em;">→ SWIPE · 9홀 레이아웃</p>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_02_hole_01_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">1</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">381m</span><span class="chip">HCP 4</span></div></div>
+      <div class="info"><h4>오프닝 중 최고 난도</h4><p>오른쪽 소나무 자연림 + 왼쪽 9홀 마운드. <b>오르막 그린</b>.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_02_hole_02_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">2</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">389m</span><span class="chip">HCP 2</span></div></div>
+      <div class="info"><h4>왼쪽 도그렉</h4><p>능선 내리막 페어웨이. <b>양쪽 OB</b>. 티샷 방향이 세컨샷 결정.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_02_hole_03_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">3</div><div class="chips"><span class="chip p3">PAR 3</span><span class="chip">123m</span><span class="chip">HCP 8</span></div></div>
+      <div class="info"><h4>짧은 파3</h4><p>작은 연못 분위기. 짧지만 <b>거리감과 방향성</b>이 핵심.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_02_hole_04_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">4</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">356m</span><span class="chip">HCP 6</span></div></div>
+      <div class="info"><h4>왼쪽 도그렉 + 그린 옆 물</h4><p>큰 나무 + 왼쪽 연못. 그린 어프로치가 흥미진진.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_02_hole_05_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">5</div><div class="chips"><span class="chip p5">PAR 5</span><span class="chip">458m</span><span class="chip">HCP 9</span></div></div>
+      <div class="info"><h4>중앙 큰 소나무</h4><p>페어웨이 중앙 큰 소나무 노리기. <b>페어웨이 벙커 클리어 vs 안전</b> 선택.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_02_hole_06_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">6</div><div class="chips"><span class="chip p3">PAR 3</span><span class="chip">199m</span><span class="chip">HCP 3</span></div></div>
+      <div class="info"><h4>긴 파3 · 30도 기울어진 그린</h4><p>199m 장거리 파3. <b>페이드 샷 필요</b>. 계곡으로 급하강.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_02_hole_07_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">7</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">403m</span><span class="chip">HCP 1</span></div></div>
+      <div class="info"><h4>파인 HCP 1 · 매치 결정자</h4><p>왼쪽 연못 + 양쪽 소나무 숲 + 오르막 그린. <b>롱·정확한 세컨샷</b> 필수.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_02_hole_08_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">8</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">372m</span><span class="chip">HCP 5</span></div></div>
+      <div class="info"><h4>오르막 + 오른쪽 도그렉</h4><p>페이드 샷이 페어웨이 벙커 클리어. 오르막 누적 → <b>실제 400m+</b>.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_02_hole_09_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">9</div><div class="chips"><span class="chip p5">PAR 5</span><span class="chip">527m</span><span class="chip">HCP 7</span></div></div>
+      <div class="info"><h4>파인 피니셔</h4><p>527m 장거리. <b>2온 어려움</b>. 페어웨이 벙커 피하면 버디 가능.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+CH 12 — APPENDIX: VALLEY COURSE
+========================================================= -->
+<section class="chapter" data-num="12" data-title="VALLEY 9H">
+  <div class="meta">
+    <span class="num">12</span><span class="dot"></span>
+    <span class="title">부록 · VALLEY 9홀 디테일</span>
+    <span class="total">/ 12</span>
+  </div>
+  <div class="rail">
+    <div class="card">
+      <span class="course-tag valley" style="margin-bottom:16px;">VALLEY · 9H</span>
+      <h2 class="display" style="font-size:48px;line-height:0.9;">밸리<br/><span class="accent-green">코스</span></h2>
+      <p style="margin-top:16px;">계곡 지형 + <b>아일랜드 그린</b>이 시그니처.</p>
+      <dl class="kv" style="margin-top:12px; gap:8px 14px; font-size:13px;">
+        <dt>Par</dt><dd>36</dd>
+        <dt>Black tee</dt><dd>3,200m / 약 3,499yd</dd>
+        <dt>홀 구성</dt><dd>Par 4 × 5, Par 5 × 2, Par 3 × 2</dd>
+      </dl>
+      <p class="muted" style="font-size:11px; margin-top:14px; font-family:'JetBrains Mono',monospace; letter-spacing:0.1em;">→ SWIPE · 9홀 레이아웃</p>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_03_hole_01_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">1</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">377m</span><span class="chip">HCP 4</span></div></div>
+      <div class="info"><h4>내리막 오프닝</h4><p>양쪽 언덕 + 경사. 페어웨이 사이 안착. 넓은 그린 + 앞 벙커.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_03_hole_02_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">2</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">338m</span><span class="chip">HCP 7</span></div></div>
+      <div class="info"><h4>계곡 안 호수 풍경</h4><p>장타자는 <b>호수 캐리 시도</b> 가능. 왼쪽 벙커 + 오른쪽 자연림 주의.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_03_hole_03_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">3</div><div class="chips"><span class="chip p3">PAR 3</span><span class="chip">140m</span><span class="chip">HCP 8</span></div></div>
+      <div class="info"><h4>짧은 파3</h4><p>왼쪽 오픈 뷰. 그린 둘러싼 벙커가 정확도 시험.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_03_hole_04_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">4</div><div class="chips"><span class="chip p5">PAR 5</span><span class="chip">522m</span><span class="chip">HCP 6</span></div></div>
+      <div class="info"><h4>왼쪽 도그렉</h4><p><b>그린 안 보임</b>. 넓은 랜딩존. 오른쪽 벙커 + 왼쪽 숲 피하기.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_03_hole_05_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">5</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">409m</span><span class="chip">HCP 1</span></div></div>
+      <div class="info"><h4>밸리 HCP 1 · 도그렉</h4><p>왼쪽 = <b>거리 부담</b> / 오른쪽 = <b>OB</b>. 코스에서 가장 어려운 홀.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_03_hole_06_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">6</div><div class="chips"><span class="chip p3">PAR 3</span><span class="chip">161m</span><span class="chip">HCP 5</span></div></div>
+      <div class="info"><h4>아일랜드 그린 파3</h4><p><b>20m 내리막</b> 아일랜드 그린. 그린 37 × 45m. 중앙 노리면 안정.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_03_hole_07_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">7</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">382m</span><span class="chip">HCP 3</span></div></div>
+      <div class="info"><h4>그린 앞 벙커 경계</h4><p>오른쪽 페어웨이 벙커 2개. 그린 앞 벙커가 <b>욕심을 경계</b>.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_03_hole_08_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">8</div><div class="chips"><span class="chip p4">PAR 4</span><span class="chip">390m</span><span class="chip">HCP 2</span></div></div>
+      <div class="info"><h4>내리막 도그렉</h4><p>양쪽 자연림 OB. <b>거리보다 정확도</b>. 슬라이스 주의.</p></div>
+    </div>
+
+    <div class="card card--hole">
+      <div class="layout" style="background-image:url('https://www.asiadcc.co.kr/images/sub/course/course_03_hole_09_a.png');"></div>
+      <div class="top-overlay"><div class="h-big">9</div><div class="chips"><span class="chip p5">PAR 5</span><span class="chip">481m</span><span class="chip">HCP 9</span></div></div>
+      <div class="info"><h4>오르막 + 더블 도그렉</h4><p>넓은 페어웨이. 오른쪽 노린 세컨샷 → <b>3샷 유리</b>, 버디 기회.</p></div>
     </div>
   </div>
 </section>
