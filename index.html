@@ -496,6 +496,43 @@
   .team-tile .captain-name { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 8px; color: #fff; }
   .team-tile .roster-line { font-size: 11.5px; color: rgba(255,255,255,0.6); line-height: 1.5; }
 
+  /* roster thumbnails (3 small player photos) */
+  .team-tile .roster-thumbs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin: 10px 0 14px;
+  }
+  .team-tile .rt {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+  }
+  .team-tile .rt-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center 12%;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .team-tile .rt-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 4px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   /* Korean team specific accent */
   .team-tile--ko { border-color: rgba(196,255,0,0.55); box-shadow: 0 0 0 1px rgba(196,255,0,0.3); }
 
@@ -602,7 +639,7 @@ CH 01 — HERO / D-DAY
     <span class="num">01</span>
     <span class="dot"></span>
     <span class="title">D-DAY</span>
-    <span class="total">/ 10</span>
+    <span class="total">/ 9</span>
   </div>
   <div class="rail">
     <div class="card">
@@ -646,7 +683,7 @@ CH 02 — LIV 골프란 (merged: intro + format + scoring + vs PGA + prize)
   <div class="meta">
     <span class="num">02</span><span class="dot"></span>
     <span class="title">LIV 골프란?</span>
-    <span class="total">/ 10</span>
+    <span class="total">/ 9</span>
   </div>
   <div class="rail">
     <div class="card">
@@ -728,7 +765,7 @@ CH 04 — 2026 LAST SAUDI SEASON (PIF news)
   <div class="meta">
     <span class="num">03</span><span class="dot"></span>
     <span class="title">2026이 마지막일지도</span>
-    <span class="total">/ 10</span>
+    <span class="total">/ 9</span>
   </div>
   <div class="rail">
     <div class="card card--dark">
@@ -776,22 +813,9 @@ CH 04 — TEAMS (13 teams overview)
   <div class="meta">
     <span class="num">04</span><span class="dot"></span>
     <span class="title">13개 팀</span>
-    <span class="total">/ 10</span>
+    <span class="total">/ 9</span>
   </div>
   <div class="rail">
-    <div class="card team-tile team-tile--ko">
-      <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/1524d7bc8bbcef87df46b348c0a150fa88b2b488-2731x2606.png?w=900&fit=max&auto=format');"></div>
-      <div class="top-row">
-        <span class="pill pill--green">KOREA · HOME</span>
-      </div>
-      <div class="team-info">
-        <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/598ec06472b86162fa3ef86963df46b3a400b227-80x38.svg" class="tall" alt="Korean GC"/></div>
-        <div class="meta-label">CAPTAIN</div>
-        <div class="captain-name">안병훈</div>
-        <div class="roster-line">김민규 · 이대니 · 송영한</div>
-      </div>
-    </div>
-
     <div class="card team-tile">
       <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/ba8d79c12b4cdc93f2aaf2ef28c93d437d0878ed-2731x2606.png?w=900&fit=max&auto=format');"></div>
       <div class="top-row">
@@ -799,9 +823,13 @@ CH 04 — TEAMS (13 teams overview)
       </div>
       <div class="team-info">
         <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/94b768c8e0973f215727860fba82d6ef6632bb2e-89x20.svg" alt="Crushers GC"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/ba9b25cd5e95ba67eb3b7d06ed8d619bc2511476-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">폴 케이시</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/33fc2437356c5e76c9897f934f64e7f88b17f76e-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">라히리</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/b78768cd8d28a23217d53d87ca66a31da6679b50-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">하월 3세</div></div>
+        </div>
         <div class="meta-label">CAPTAIN</div>
         <div class="captain-name">브라이슨 디섐보</div>
-        <div class="roster-line">폴 케이시 · 아니르반 라히리 · 찰스 하월 3세</div>
       </div>
     </div>
 
@@ -812,61 +840,13 @@ CH 04 — TEAMS (13 teams overview)
       </div>
       <div class="team-info">
         <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/903af3bbdd471d48a87ad1b694dfea1ff89fd2dc-123x20.svg" alt="Legion XIII"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/c6321bf7ee24e10d15e74141a804004ff22d3961-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">티렐 해튼</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/8acba4016260c37fd065b9f9f5aba1f663c2c405-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">매키빈</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/fb52c2d4974233699336dc5681e7392907c8c5c4-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">서랫</div></div>
+        </div>
         <div class="meta-label">CAPTAIN</div>
         <div class="captain-name">존 람</div>
-        <div class="roster-line">티렐 해튼 · 톰 매키빈 · 케일럽 서랫</div>
-      </div>
-    </div>
-
-    <div class="card team-tile">
-      <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/09442b4e61859f63729e4b660a34454da2cb8bac-2731x2606.png?w=900&fit=max&auto=format');"></div>
-      <div class="top-row">
-        <span class="pill">VETERAN</span>
-      </div>
-      <div class="team-info">
-        <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/dd4c7ea530f43efb740c3c81c1fd5cb4f6a2311a-226x78.svg" class="tall" alt="4Aces GC"/></div>
-        <div class="meta-label">CAPTAIN</div>
-        <div class="captain-name">더스틴 존슨</div>
-        <div class="roster-line">앤서니 김 · 토마스 피터스 · 토마스 드트리</div>
-      </div>
-    </div>
-
-    <div class="card team-tile">
-      <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/1ce54b3a8b3a8408d82e55bbf3106a1f10e7ec96-2731x2606.png?w=900&fit=max&auto=format');"></div>
-      <div class="top-row">
-        <span class="pill">LEGEND</span>
-      </div>
-      <div class="team-info">
-        <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/055c3fc0c721b5ab3f80095fcf1c70a4802e02bb-117x11.svg" alt="HyFlyers GC"/></div>
-        <div class="meta-label">CAPTAIN</div>
-        <div class="captain-name">필 미컬슨</div>
-        <div class="roster-line">캐머런 트링게일 · 브렌던 스틸 · 마이클 라 사소</div>
-      </div>
-    </div>
-
-    <div class="card team-tile">
-      <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/65d24ff3786e2d68f65b2db90425a73f80dda4bf-2731x2606.png?w=900&fit=max&auto=format');"></div>
-      <div class="top-row">
-        <span class="pill">AUSSIE</span>
-      </div>
-      <div class="team-info">
-        <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/e330f66de98f12f0647719678f38e8eb71a42128-120x20.svg" alt="Ripper GC"/></div>
-        <div class="meta-label">CAPTAIN</div>
-        <div class="captain-name">캐머런 스미스</div>
-        <div class="roster-line">마크 리시먼 · 루카스 허버트 · 엘비스 스마일리</div>
-      </div>
-    </div>
-
-    <div class="card team-tile">
-      <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/5d68a8851131b10c2d207e4622ce2ad325462838-2747x2622.png?w=900&fit=max&auto=format');"></div>
-      <div class="top-row">
-        <span class="pill">SPAIN · LATIN</span>
-      </div>
-      <div class="team-info">
-        <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/f491960d434d87e39d13a052ec9ee835127d3ac8-113x20.svg" alt="Fireballs GC"/></div>
-        <div class="meta-label">CAPTAIN</div>
-        <div class="captain-name">세르히오 가르시아</div>
-        <div class="roster-line">에이브러햄 앤서 등 라틴 라인업</div>
       </div>
     </div>
 
@@ -877,9 +857,98 @@ CH 04 — TEAMS (13 teams overview)
       </div>
       <div class="team-info">
         <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/55beae0a3113dda0e9eb26c0e9bb9c1172b01a9e-118x20.svg" alt="Torque GC"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/ce03a65b7f451e7e6ddeedc9027f72406c3fbc47-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">무뇨스</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/e2b3ed824f461fd8fc7f4629bfc303fd2f6c3d15-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">오르티스</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/4fc795c09099b6db8c6f24eded8a1232778ad8ec-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">앤서</div></div>
+        </div>
         <div class="meta-label">CAPTAIN</div>
         <div class="captain-name">호아킨 니에만</div>
-        <div class="roster-line">세바스티안 무뇨스 · 카를로스 오르티스</div>
+      </div>
+    </div>
+
+    <div class="card team-tile team-tile--ko">
+      <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/1524d7bc8bbcef87df46b348c0a150fa88b2b488-2731x2606.png?w=900&fit=max&auto=format');"></div>
+      <div class="top-row">
+        <span class="pill pill--green">KOREA · HOME</span>
+      </div>
+      <div class="team-info">
+        <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/598ec06472b86162fa3ef86963df46b3a400b227-80x38.svg" class="tall" alt="Korean GC"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/3e777fd8c926471f308bcf82f615ec3f7785e507-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">김민규</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/0bb5df06573cf381678795018bf3dee36c8041cc-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">이대니</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/a5e8a5b6a552b74e6714ebd610ae5fa3e7faad96-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">송영한</div></div>
+        </div>
+        <div class="meta-label">CAPTAIN</div>
+        <div class="captain-name">안병훈</div>
+      </div>
+    </div>
+
+    <div class="card team-tile">
+      <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/09442b4e61859f63729e4b660a34454da2cb8bac-2731x2606.png?w=900&fit=max&auto=format');"></div>
+      <div class="top-row">
+        <span class="pill">VETERAN</span>
+      </div>
+      <div class="team-info">
+        <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/dd4c7ea530f43efb740c3c81c1fd5cb4f6a2311a-226x78.svg" class="tall" alt="4Aces GC"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/14619414c4403a9fbc5abc952857d1f2759c9bcf-2678x2538.png?w=300&fit=max&auto=format');"></div><div class="rt-name">앤서니 김</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/9b1f1ef29279b6565840de16c37a5f9ef203609a-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">피터스</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/5b17d74d2d4f335da6555bd8665982c0cdb77aa3-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">드트리</div></div>
+        </div>
+        <div class="meta-label">CAPTAIN</div>
+        <div class="captain-name">더스틴 존슨</div>
+      </div>
+    </div>
+
+    <div class="card team-tile">
+      <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/1ce54b3a8b3a8408d82e55bbf3106a1f10e7ec96-2731x2606.png?w=900&fit=max&auto=format');"></div>
+      <div class="top-row">
+        <span class="pill">LEGEND</span>
+      </div>
+      <div class="team-info">
+        <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/055c3fc0c721b5ab3f80095fcf1c70a4802e02bb-117x11.svg" alt="HyFlyers GC"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/a20bc43099076edb964b3513db5bcc0eb5c15659-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">트링게일</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/fbd77ecd79e1a2d59104674edbe99bc9c0c4accb-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">스틸</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/396063a68f27c4782982fef18d03b41387e4b8a8-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">라 사소</div></div>
+        </div>
+        <div class="meta-label">CAPTAIN</div>
+        <div class="captain-name">필 미컬슨</div>
+      </div>
+    </div>
+
+    <div class="card team-tile">
+      <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/65d24ff3786e2d68f65b2db90425a73f80dda4bf-2731x2606.png?w=900&fit=max&auto=format');"></div>
+      <div class="top-row">
+        <span class="pill">AUSSIE</span>
+      </div>
+      <div class="team-info">
+        <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/e330f66de98f12f0647719678f38e8eb71a42128-120x20.svg" alt="Ripper GC"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/2ff7155e0a57156b3eeaf5f4364228bf33e91017-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">리시먼</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/293f9b6394015ea6bc93d83e5e986cf4edda9473-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">허버트</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/e2660d6973d8a38ae456605ac156c431f60061b0-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">스마일리</div></div>
+        </div>
+        <div class="meta-label">CAPTAIN</div>
+        <div class="captain-name">캐머런 스미스</div>
+      </div>
+    </div>
+
+    <div class="card team-tile">
+      <div class="cap-photo" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/5d68a8851131b10c2d207e4622ce2ad325462838-2747x2622.png?w=900&fit=max&auto=format');"></div>
+      <div class="top-row">
+        <span class="pill">SPAIN · LATIN</span>
+      </div>
+      <div class="team-info">
+        <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/f491960d434d87e39d13a052ec9ee835127d3ac8-113x20.svg" alt="Fireballs GC"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/c46890fb030a902de7f235b2bddf32006b860199-2747x2622.png?w=300&fit=max&auto=format');"></div><div class="rt-name">푸이그</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/ba7f2bfcf928d420f81f8344e9def34ffb2b50f7-2747x2622.png?w=300&fit=max&auto=format');"></div><div class="rt-name">바예스테르</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/7fd47e86fe49d15f248593abcddf3f6d78532e7e-2747x2622.png?w=300&fit=max&auto=format');"></div><div class="rt-name">마사베우</div></div>
+        </div>
+        <div class="meta-label">CAPTAIN</div>
+        <div class="captain-name">세르히오 가르시아</div>
       </div>
     </div>
 
@@ -890,9 +959,13 @@ CH 04 — TEAMS (13 teams overview)
       </div>
       <div class="team-info">
         <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/ff89c9e3e147555176121a2559463c58442276f7-75x20.svg" alt="Cleeks GC"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/d33886b29976442de24791547ea721438e413ea9-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">블랜드</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/8d2e89a578e3e68a649272d7d4eee70a06e55056-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">메론크</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/4c3adc6cc280ab5da5a03c85045e426cd7abbee4-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">페레즈</div></div>
+        </div>
         <div class="meta-label">CAPTAIN</div>
         <div class="captain-name">마르틴 카이머</div>
-        <div class="roster-line">메이저 2승 · 독일 베테랑</div>
       </div>
     </div>
 
@@ -903,9 +976,13 @@ CH 04 — TEAMS (13 teams overview)
       </div>
       <div class="team-info">
         <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/51ef96870e192174fa5a0e9d7e0ea9d6f55907b0-101x20.svg" alt="Majesticks"/></div>
-        <div class="meta-label">CO-CAPTAINS</div>
-        <div class="captain-name">이언 폴터 · 리 웨스트우드</div>
-        <div class="roster-line">샘 홀스필드 · 로리 캔터</div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/106739aef6f362fa5cc1a087b86d3178b348c50d-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">웨스트우드</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/038ea81c03e4d1837aaab57ce999dbc019dd157a-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">홀스필드</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/70c0c1ec62ae2b2359b0b2a33fc1c13466ec95b6-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">캔터</div></div>
+        </div>
+        <div class="meta-label">CO-CAPTAIN</div>
+        <div class="captain-name">이언 폴터</div>
       </div>
     </div>
 
@@ -916,9 +993,13 @@ CH 04 — TEAMS (13 teams overview)
       </div>
       <div class="team-info">
         <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/982036f1045aa97eb76f31da02350fb1807fefba-576x149.svg" class="tall" alt="OKGC"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/51b8f66c179c5b359ceb9552812a6f6ae5bfc0aa-2730x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">코크락</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/ff40a44142f9abc767d85ffc63f16dff0fe99d56-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">맥다월</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/4b32754dbf86973b8c9142d1d0f6cf82b3f2130a-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">바너 3세</div></div>
+        </div>
         <div class="meta-label">CAPTAIN</div>
         <div class="captain-name">테일러 구치</div>
-        <div class="roster-line">제이슨 코크락 · 그레임 맥다월 · 해롤드 바너 3세</div>
       </div>
     </div>
 
@@ -929,9 +1010,13 @@ CH 04 — TEAMS (13 teams overview)
       </div>
       <div class="team-info">
         <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/7959878a758197a1d50d60225e421006e24299cc-284x49.svg" class="tall" alt="RangeGoats"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/650cd6cb9f92d87fffc0b520ff35948e78277b20-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">윌라인</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/b81504ca776123e6ddcd54a519a979dc7b198737-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">울프</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/df9f87797a802ac5066127778e45891202307441-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">캠벨</div></div>
+        </div>
         <div class="meta-label">CAPTAIN</div>
         <div class="captain-name">버바 왓슨</div>
-        <div class="roster-line">피터 윌라인 · 매튜 울프 · 벤 캠벨</div>
       </div>
     </div>
 
@@ -942,96 +1027,26 @@ CH 04 — TEAMS (13 teams overview)
       </div>
       <div class="team-info">
         <div class="wordmark"><img src="https://cdn.sanity.io/images/2guez6v8/prd/de44bd9621e93325d34fd45b7f88e3460606d6d8-109x22.svg" alt="Southern Guards"/></div>
+        <div class="roster-thumbs">
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/60114c44bc23036fc2946191fa87d60e792d261c-2730x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">슈와첼</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/916045ec032ed4da77d5a70bf75949781f1068eb-2730x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">버미스터</div></div>
+          <div class="rt"><div class="rt-img" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/fbc515fc631700f2ad9bc6d93bdea3d456a5e92d-2731x2606.png?w=300&fit=max&auto=format');"></div><div class="rt-name">그레이스</div></div>
+        </div>
         <div class="meta-label">CAPTAIN</div>
         <div class="captain-name">루이 우스트하이젠</div>
-        <div class="roster-line">찰 슈와첼 · 딘 버미스터 · 브랜든 그레이스</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- =========================================================
-CH 07 — KOREAN GOLF CLUB DEEPDIVE
+CH 05 — STARS
 ========================================================= -->
-<section class="chapter" data-num="05" data-title="KOREAN GC">
+<section class="chapter" data-num="05" data-title="STARS">
   <div class="meta">
     <span class="num">05</span><span class="dot"></span>
-    <span class="title">우리 팀 - Korean GC</span>
-    <span class="total">/ 10</span>
-  </div>
-  <div class="rail">
-    <div class="card card--dark">
-      <span class="eyebrow accent-green">REBRAND · 2026</span>
-      <div style="display:flex; align-items:center; justify-content:center; padding:18px 0 22px;">
-        <img loading="lazy" src="https://cdn.sanity.io/images/2guez6v8/prd/598ec06472b86162fa3ef86963df46b3a400b227-80x38.svg" alt="Korean GC" style="height:60px; filter:brightness(0) invert(1);" />
-      </div>
-      <h3 style="text-align:center; font-size:14px; color:var(--muted); font-weight:500; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:8px;">Iron Heads → Korean GC</h3>
-      <p style="text-align:center; font-size:14px;">전원 한국 선수로 재편한 첫 단일 국적 팀.</p>
-      <div class="pgrid" style="margin-top:18px;">
-        <div class="p" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/1524d7bc8bbcef87df46b348c0a150fa88b2b488-2731x2606.png?w=600&fit=max&auto=format');" data-name="안병훈"><span class="role">CAPT</span></div>
-        <div class="p" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/3e777fd8c926471f308bcf82f615ec3f7785e507-2731x2606.png?w=600&fit=max&auto=format');" data-name="김민규"></div>
-        <div class="p" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/0bb5df06573cf381678795018bf3dee36c8041cc-2731x2606.png?w=600&fit=max&auto=format');" data-name="이대니"></div>
-        <div class="p" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/a5e8a5b6a552b74e6714ebd610ae5fa3e7faad96-2731x2606.png?w=600&fit=max&auto=format');" data-name="송영한"></div>
-      </div>
-    </div>
-
-    <div class="card card--photo">
-      <div class="pic" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/1524d7bc8bbcef87df46b348c0a150fa88b2b488-2731x2606.png?w=900&fit=max&auto=format');"></div>
-      <span class="corner-badge">CAPTAIN</span>
-      <div class="corner-logo"><img src="https://cdn.sanity.io/images/2guez6v8/prd/598ec06472b86162fa3ef86963df46b3a400b227-80x38.svg" alt="" /></div>
-      <div class="info">
-        <span class="eyebrow">안병훈 · 1991</span>
-        <h2>AN<br/>BYEONG-<span class="accent-green">HUN</span></h2>
-        <p>2009 US 아마추어 챔피언. 2015 BMW PGA 우승. 장타·안정감 다 갖춘 새 캡틴.</p>
-      </div>
-    </div>
-
-    <div class="card card--photo">
-      <div class="pic" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/3e777fd8c926471f308bcf82f615ec3f7785e507-2731x2606.png?w=900&fit=max&auto=format');"></div>
-      <div class="corner-logo"><img src="https://cdn.sanity.io/images/2guez6v8/prd/598ec06472b86162fa3ef86963df46b3a400b227-80x38.svg" alt="" /></div>
-      <div class="info">
-        <span class="eyebrow">김민규 · 1999</span>
-        <h2>MIN<span class="accent-green">KYU</span><br/>KIM</h2>
-        <p>KPGA 출신 유망주. 2025 LIV 리저브 → 2026 정식 합류.</p>
-      </div>
-    </div>
-
-    <div class="card card--photo">
-      <div class="pic" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/0bb5df06573cf381678795018bf3dee36c8041cc-2731x2606.png?w=900&fit=max&auto=format');"></div>
-      <div class="corner-logo"><img src="https://cdn.sanity.io/images/2guez6v8/prd/598ec06472b86162fa3ef86963df46b3a400b227-80x38.svg" alt="" /></div>
-      <div class="info">
-        <span class="eyebrow">이대니 · 1990</span>
-        <h2>DANNY<br/>LEE</h2>
-        <p>2015 PGA Tour 그린브라이어 클래식 우승. 베테랑 안정감 담당.</p>
-      </div>
-    </div>
-
-    <div class="card card--photo">
-      <div class="pic" style="background-image:url('https://cdn.sanity.io/images/2guez6v8/prd/a5e8a5b6a552b74e6714ebd610ae5fa3e7faad96-2731x2606.png?w=900&fit=max&auto=format');"></div>
-      <div class="corner-logo"><img src="https://cdn.sanity.io/images/2guez6v8/prd/598ec06472b86162fa3ef86963df46b3a400b227-80x38.svg" alt="" /></div>
-      <div class="info">
-        <span class="eyebrow">송영한 · 1985</span>
-        <h2>YOUNG<span class="accent-green">HAN</span><br/>SONG</h2>
-        <p>KPGA 베테랑. 2025 LIV 리저브 → 2026 정식 멤버.</p>
-      </div>
-    </div>
-
-    <div class="card card--green">
-      <span class="eyebrow">HOME ADVANTAGE</span>
-      <h2 style="font-size:30px;">부산에서 첫 한국팀<br/>우승 가능?</h2>
-      <p style="font-weight:600;">LIV 한국 대회에서 한국팀 우승이 부산에서 나올 수도. 갤러리 함성이 큰 변수.</p>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================================
-CH 08 — DEFENDING CHAMP + STAR PLAYERS
-========================================================= -->
-<section class="chapter" data-num="06" data-title="STARS">
-  <div class="meta">
-    <span class="num">06</span><span class="dot"></span>
     <span class="title">꼭 봐야 할 스타들</span>
-    <span class="total">/ 10</span>
+    <span class="total">/ 9</span>
   </div>
   <div class="rail">
     <div class="card card--photo">
@@ -1126,22 +1141,17 @@ CH 08 — DEFENDING CHAMP + STAR PLAYERS
       </div>
     </div>
 
-    <div class="card card--green">
-      <span class="eyebrow">TIP</span>
-      <h2 style="font-size:28px;">못 정하겠으면…</h2>
-      <p style="font-weight:700;">샷건 시작 직후 <b>안병훈</b>이나 <b>브라이슨</b>부터 따라가 봐. 갤러리 가장 많은 쪽이 그 둘일 확률이 높음.</p>
-    </div>
   </div>
 </section>
 
 <!-- =========================================================
 CH 07 — COURSE + GETTING THERE + PARKING
 ========================================================= -->
-<section class="chapter" data-num="07" data-title="COURSE+ACCESS">
+<section class="chapter" data-num="06" data-title="COURSE+ACCESS">
   <div class="meta">
-    <span class="num">07</span><span class="dot"></span>
+    <span class="num">06</span><span class="dot"></span>
     <span class="title">코스 + 가는 길 + 주차</span>
-    <span class="total">/ 10</span>
+    <span class="total">/ 9</span>
   </div>
   <div class="rail">
     <div class="card card--photo">
@@ -1233,11 +1243,11 @@ CH 07 — COURSE + GETTING THERE + PARKING
 <!-- =========================================================
 CH 14 — WHAT YOU CAN/CAN'T BRING
 ========================================================= -->
-<section class="chapter" data-num="08" data-title="MANNERS+PREP">
+<section class="chapter" data-num="07" data-title="MANNERS+PREP">
   <div class="meta">
-    <span class="num">08</span><span class="dot"></span>
+    <span class="num">07</span><span class="dot"></span>
     <span class="title">매너 + 반입 + 준비물</span>
-    <span class="total">/ 10</span>
+    <span class="total">/ 9</span>
   </div>
   <div class="rail">
     <div class="card card--green">
@@ -1310,11 +1320,11 @@ CH 14 — WHAT YOU CAN/CAN'T BRING
 <!-- =========================================================
 CH 18 — PEGGY GOU
 ========================================================= -->
-<section class="chapter" data-num="09" data-title="PEGGY GOU">
+<section class="chapter" data-num="08" data-title="PEGGY GOU">
   <div class="meta">
-    <span class="num">09</span><span class="dot"></span>
+    <span class="num">08</span><span class="dot"></span>
     <span class="title">페기 구 공연</span>
-    <span class="total">/ 10</span>
+    <span class="total">/ 9</span>
   </div>
   <div class="rail">
     <div class="card card--photo">
@@ -1371,11 +1381,11 @@ CH 18 — PEGGY GOU
 <!-- =========================================================
 CH 10 — CLOSING (merged tips + tl;dr + sources)
 ========================================================= -->
-<section class="chapter" data-num="10" data-title="GO!">
+<section class="chapter" data-num="09" data-title="GO!">
   <div class="meta">
-    <span class="num">10</span><span class="dot"></span>
+    <span class="num">09</span><span class="dot"></span>
     <span class="title">잘 즐기기 + 정리</span>
-    <span class="total">/ 10</span>
+    <span class="total">/ 9</span>
   </div>
   <div class="rail">
     <div class="card">
